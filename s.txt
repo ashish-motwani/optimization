@@ -1,0 +1,16 @@
+Steps for bounding phase method
+
+Step 1: Choose an initia l guess x0 between the given range(a,b) and increment del. Set k=0.
+Step 2: if f(x - |del|) >= f(x0) >= f(x0 + |del|) then del is positive
+        else if f(x0 - |del|) <= f(x0) <= f(x0 + |del|) then del is negative. 
+        else go back to step 1.
+Step 3: Set xf"{k+1}" = xf"{k}" + (2^k)*del
+Step 4: if f(xf"{k+1}") < f(xf"{k}"), set k = k+1 and go to step 3
+        else minimum lies in the interval (xf"{k-1}", xf"{k+1}")
+
+Steps for newton raphson method
+
+Step 1: Choose initial guess x1 between the given range(c,d) and a small number e. Set k=1 and compute f'(xf"{k}")
+Step 2: Compute f''(xf"{k}")
+Step 3: Calculate xf"{k+1}" = xf"{k}" - ( f'(xf"{k}") / f''(xf"{k}") ). Compute f(xf"{k+1}").
+Step 4: if |f'(xf"{k+1}")| < e then terminate. Else k = k+1 and go to step 2
